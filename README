@@ -1,0 +1,42 @@
+Team:
+	Abdullah Aldobaie
+	Ryan Finn
+	Braden Edmunds
+	Nathan Patterson
+	
+Status:
+	Done, but still need to work on very minor bug fixes,(i.e. clean up strings that have already been
+	parsed, split location into city/state).
+
+How to run crawl program:
+	Command Line Parameters:
+		./crawl param1 -domain param2 -threads param3 -count param4 -miss param5 -d param6
+
+		 param1:      		Web page to to be crawled.
+
+		-domain param2:   	Domain to restrict crawling to.
+
+		-threads param3: 	Number of crawling worker threads to create. (maximum 8)
+		
+		-count param4:    	Top X words and their frequency. Default is 100.
+
+		-miss param5:    	Top X misspelled words and their frequency. Default is 100.
+
+		-d param6:		  	The dictionary to be loaded. If a dictionary is not provided, 
+							then the .exe needs to be run within the src folder, and
+							words.txt will be loaded.
+
+	Example:
+		./crawl 'www.amazon.com' -domain 'amazon.com' -threads '8' -d '[INSERT PATH TO DICTIONARY OR LEAVE THIS PARAM AND FLAG OUT]' -cout '100' -miss '4'
+		
+	How to stop program:
+		Press 0 + return
+		
+	Extra Info:
+		-The program is set to crawl to a depth of 16 from the start page.
+		-To look at the output navigate to the command line path. A folder named output containing a file named index.html be available. Use a web broweser to navigate index.html.
+		-Robots.txt will be loaded based on the domain provided.
+		-The program will not crawl faster than 8 requests per seconds.
+		-The console will display when a thread begins to crawl and the URL that they are currently crawling.
+		
+	
